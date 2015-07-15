@@ -3,16 +3,46 @@ button[name="use-suggestions"] {
   float: none !important;
 }
 
-button[name="search-metadata"] {
+input[name="search-metadata"] {
   background-color: #4CAF50 !important;
   float: right !important;
   margin-right: 0 !important;
   border: none !important;
   color: white  !important;
   border-radius: 2px !important;
+  width: 130px !important;
+  height: 36px !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,.05);
+  cursor: default;
+  display: inline-block;
+  font-family: 'Roboto',arial,sans-serif;
+  font-weight: 500;
+  min-width: 40px;
+  text-align: center;
+  text-decoration: none!important;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-transition: background-color .218s,border-color .218s,box-shadow .218s;
+  -moz-transition: background-color .218s,border-color .218s,box-shadow .218s;
+  -o-transition: background-color .218s,border-color .218s,box-shadow .218s;
+  transition: background-color .218s,border-color .218s,box-shadow .218s;
+  font-size: 14px;
+  height: 36px;
+  text-transform: none;
+  outline: none;
+  filter: none;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-indent: 0px;
+  text-shadow: none;
+  -webkit-writing-mode: horizontal-tb;
 }
 
-button[name="search-metadata"]:hover {
+input[name="search-metadata"]:hover {
   background-color: #81C784 !important;
   box-shadow: inset 0 -2px 0 rgba(0,0,0,.27);
   background-image: none;

@@ -19,10 +19,14 @@ $(function() {
     setTimeout(function() {
       var buttons = $('.simple-dialog.edit-dialog')
                       .find('.simple-dialog-buttons');
-      if(buttons.find('button[name="search-metadata"]').length === 0) {
-        buttons.append('<button name="search-metadata">Find Metadata</button>');
+      if(buttons.find('div[name="search-metadata"]').length === 0) {
+        buttons.append('<input type="button" name="search-metadata" value="Find Metadata" />');
       }
     }, 500);
+  });
+
+  $(document).on('click', 'input[name="search-metadata"]', function() {
+    console.log('hello world');
   });
 
 });
