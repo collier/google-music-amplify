@@ -19,7 +19,7 @@ $(function() {
     setTimeout(function() {
       var buttons = $('.simple-dialog.edit-dialog')
                       .find('.simple-dialog-buttons');
-      if(buttons.find('div[name="search-metadata"]').length === 0) {
+      if(buttons.find('input[name="search-metadata"]').length === 0) {
         buttons.append('<input type="button" name="search-metadata" value="Find Metadata" />');
       }
     }, 500);
