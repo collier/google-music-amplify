@@ -1,6 +1,6 @@
 {
   "name": "__MSG_appName__",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
@@ -22,6 +22,9 @@
     "default_title": "Google Music Amplify",
     "default_popup": "popup.html"
   },
+  "permissions": [
+    "declarativeContent"
+  ],
   "options_page": "options.html",
   "content_scripts": [
     {
@@ -30,7 +33,11 @@
         "https://play.google.com/music/*"
       ],
       "js": [
+        "bower_components/jquery/dist/jquery.min.js",
         "scripts/contentscript.js"
+      ],
+      "css": [
+        "styles/inject.css"
       ],
       "run_at": "document_end",
       "all_frames": false

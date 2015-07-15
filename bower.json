@@ -1,7 +1,9 @@
 {
   "name": "google-music-amplify",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "~1.11.3"
+  },
   "devDependencies": {
     "chai": "~3.0.0",
     "mocha": "~2.2.5"
