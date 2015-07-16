@@ -3,7 +3,7 @@ button[name="use-suggestions"] {
   float: none !important;
 }
 
-.gma-search-metadata {
+.gma-search-metadata, div[ng-controller="metadataCtrl"] {
   display: inline;
 }
 
@@ -51,4 +51,12 @@ input[name="search-metadata"]:hover {
   box-shadow: inset 0 -2px 0 rgba(0,0,0,.27);
   background-image: none;
   color: white  !important;
+}
+
+.md-scroll-mask {
+  z-index: 1200;
+}
+
+.md-dialog-container {
+  z-index: 1200;
 }

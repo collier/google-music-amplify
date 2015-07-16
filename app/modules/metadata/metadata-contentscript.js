@@ -6,7 +6,7 @@ $(function() {
   //Dynamically append the inject.css stylsheet into the head,
   //so that styles marked with !imporant can still be overridden
   var link = document.createElement("link");
-  link.href = chrome.extension.getURL("styles/inject.css");
+  link.href = chrome.extension.getURL("modules/metadata/metadata.css");
   link.type = "text/css";
   link.rel = "stylesheet";
   $("head").append(link);
@@ -21,14 +21,15 @@ $(function() {
                       .find('.simple-dialog-buttons');
       if(buttons.find('input[name="search-metadata"]').length === 0) {
         buttons.append('<div class="gma-search-metadata"></div>');
-        $('.gma-search-metadata').load(chrome.extension.getURL("templates/search-metadata.html"));
+        $('.gma-search-metadata').load(chrome.extension.getURL("modules/metadata/metadata.html"), function(){
+          angular.bootstrap(document, ['googleMusicAmplify']);
+        });
       }
     }, 500);
   });
 
-  $(document).on('click', 'input[name="search-metadata"]', function() {
-    console.log('hello world');
-    // $('.simple-dialog.edit-dialog').css('left','370.5px');
-  });
+  // $(document).on('click', 'input[name="search-metadata"]', function() {
+  //   console.log('hello world');
+  // });
 
 });

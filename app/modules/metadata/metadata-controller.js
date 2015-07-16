@@ -1,5 +1,5 @@
-angular.module('dialogDemo1', ['ngMaterial'])
-.controller('AppCtrl', function($scope, $mdDialog) {
+angular.module('googleMusicAmplify', ['ngMaterial'])
+.controller('metadataCtrl', function($scope, $mdDialog) {
   $scope.alert = '';
   $scope.showAlert = function(ev) {
     // Appending dialog to document.body to cover sidenav in docs app

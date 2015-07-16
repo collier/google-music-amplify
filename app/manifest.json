@@ -36,7 +36,10 @@
         "bower_components/jquery/dist/jquery.min.js",
         "bower_components/angular/angular.js",
         "bower_components/angular-material/angular-material.js",
-        "scripts/contentscript.js"
+        "bower_components/angular-animate/angular-animate.js",
+        "bower_components/angular-aria/angular-aria.js",
+        "modules/metadata/metadata-contentscript.js",
+        "modules/metadata/metadata-controller.js"
       ],
       "css": [
         "bower_components/angular-material/angular-material.css"
@@ -46,7 +49,7 @@
     }
   ],
   "web_accessible_resources": [
-    "styles/inject.css",
-    "templates/*"
+    "modules/*/*.css",
+    "modules/*/*.html"
   ]
 }
