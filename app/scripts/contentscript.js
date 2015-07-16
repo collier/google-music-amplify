@@ -20,13 +20,15 @@ $(function() {
       var buttons = $('.simple-dialog.edit-dialog')
                       .find('.simple-dialog-buttons');
       if(buttons.find('input[name="search-metadata"]').length === 0) {
-        buttons.append('<input type="button" name="search-metadata" value="Find Metadata" />');
+        buttons.append('<div class="gma-search-metadata"></div>');
+        $('.gma-search-metadata').load(chrome.extension.getURL("templates/search-metadata.html"));
       }
     }, 500);
   });
 
   $(document).on('click', 'input[name="search-metadata"]', function() {
     console.log('hello world');
+    // $('.simple-dialog.edit-dialog').css('left','370.5px');
   });
 
 });

@@ -3,6 +3,10 @@ button[name="use-suggestions"] {
   float: none !important;
 }
 
+.gma-search-metadata {
+  display: inline;
+}
+
 input[name="search-metadata"] {
   background-color: #4CAF50 !important;
   float: right !important;

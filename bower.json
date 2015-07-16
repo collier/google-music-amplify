@@ -2,7 +2,9 @@
   "name": "google-music-amplify",
   "version": "0.0.0",
   "dependencies": {
-    "jquery": "~1.11.3"
+    "jquery": "~1.11.3",
+    "angular": "~1.4.3",
+    "angular-material": "~0.10.1"
   },
   "devDependencies": {
     "chai": "~3.0.0",

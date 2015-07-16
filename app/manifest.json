@@ -34,13 +34,19 @@
       ],
       "js": [
         "bower_components/jquery/dist/jquery.min.js",
+        "bower_components/angular/angular.js",
+        "bower_components/angular-material/angular-material.js",
         "scripts/contentscript.js"
+      ],
+      "css": [
+        "bower_components/angular-material/angular-material.css"
       ],
       "run_at": "document_end",
       "all_frames": false
     }
   ],
   "web_accessible_resources": [
-    "styles/inject.css"
+    "styles/inject.css",
+    "templates/*"
   ]
 }
