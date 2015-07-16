@@ -1,4 +1,4 @@
-angular.module('googleMusicAmplify', ['ngMaterial'])
+angular.module('metadata', ['ngMaterial'])
 .controller('metadataCtrl', function($scope, $mdDialog) {
   $scope.alert = '';
   $scope.showAlert = function(ev) {
@@ -16,14 +16,3 @@ angular.module('googleMusicAmplify', ['ngMaterial'])
     );
   };
 });
-function DialogController($scope, $mdDialog) {
-  $scope.hide = function() {
-    $mdDialog.hide();
-  };
-  $scope.cancel = function() {
-    $mdDialog.cancel();
-  };
-  $scope.answer = function(answer) {
-    $mdDialog.hide(answer);
-  };
-}

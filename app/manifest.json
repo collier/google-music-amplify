@@ -1,6 +1,6 @@
 {
   "name": "__MSG_appName__",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
@@ -38,8 +38,10 @@
         "bower_components/angular-material/angular-material.js",
         "bower_components/angular-animate/angular-animate.js",
         "bower_components/angular-aria/angular-aria.js",
-        "modules/metadata/metadata-contentscript.js",
-        "modules/metadata/metadata-controller.js"
+        "scripts/app.js",
+        "modules/metadata/metadata-inject.js",
+        "modules/metadata/metadata.js",
+        "scripts/init.js"
       ],
       "css": [
         "bower_components/angular-material/angular-material.css"
