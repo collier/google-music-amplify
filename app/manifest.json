@@ -38,9 +38,10 @@
         "bower_components/angular-material/angular-material.js",
         "bower_components/angular-animate/angular-animate.js",
         "bower_components/angular-aria/angular-aria.js",
+        "bower_components/angular-spotify/src/angular-spotify.js",
         "scripts/app.js",
-        "modules/metadata/metadata-inject.js",
-        "modules/metadata/metadata.js",
+        "modules/metadata/metadata.injector.js",
+        "modules/metadata/metadata.controller.js",
         "scripts/init.js"
       ],
       "css": [

@@ -1,0 +1,41 @@
+md-dialog {
+  min-height: 600px;
+  max-height: 690px;
+  min-width: 470px;
+}
+
+md-dialog-content {
+  padding-top: 0 !important;
+}
+
+md-list {
+  max-width: 380px;
+}
+
+md-input-container {
+  padding-bottom: 5px;
+}
+
+.md-list-item-text h3, .md-list-item-text h4, .md-list-item-text p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.md-list-item-text h3 {
+  line-height: 16px !important;
+}
+
+.md-list-item-text h4 {
+  line-height: 15px !important;
+  margin: 0 !important;
+}
+
+md-list-item img {
+  width: 65px;
+  height: 65px;
+  margin-top: 13px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  box-sizing: content-box;
+}

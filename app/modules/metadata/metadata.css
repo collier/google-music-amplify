@@ -3,10 +3,16 @@ button[name="use-suggestions"] {
   float: none !important;
 }
 
-.gma-metadata, div[ng-controller="metadataCtrl"] {
+.gma-metadata, div[ng-controller="MetadataCtrl"] {
   display: inline;
 }
 
+/*
+ * Google music had some sort of event on all buttons that would simply
+ * close the dialog altogether. In order to avoid this, I do not use a
+ * button tag, but rather an input tag of type button. This means I need
+ * to transfer all the relavent styles.
+ */
 input[name="search-metadata"] {
   background-color: #4CAF50 !important;
   float: right !important;

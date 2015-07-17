@@ -9,6 +9,7 @@ gma.metadata = {
 
   injectCSS : function() {
     gma.util.injectStylesheet('modules/metadata/metadata.css');
+    gma.util.injectStylesheet('modules/metadata/dialog.css');
   },
 
   //Add event listener for the "Edit Info" drop down option. When clicked, wait
