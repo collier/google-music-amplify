@@ -13,8 +13,8 @@ angular.module('metadata', ['ngMaterial','spotify'])
 })
 
 .controller('DialogCtrl', function($scope, $mdDialog, Spotify) {
-  $scope.songName = $('.simple-dialog-content input[data-field="1"]').attr('data-original');
-  $scope.songArtist = $('.simple-dialog-content input[data-field="3"]').attr('data-original');
+  $scope.songName = angular.copy($('.simple-dialog-content input[data-field="1"]').attr('data-original'));
+  $scope.songArtist = angular.copy($('.simple-dialog-content input[data-field="3"]').attr('data-original'));
 
   var buildQuery = function(track, artist) {
     var result='track:"'+track+'"';
@@ -23,18 +23,28 @@ angular.module('metadata', ['ngMaterial','spotify'])
     return result;
   };
 
-  Spotify.search(buildQuery($scope.songName, $scope.songArtist), 'track').then(function (data) {
-    $scope.spotifyResults = data.tracks.items;
-    console.log($scope.spotifyResults);
-  });
+  $scope.getSpotifyResults = function() {
+    Spotify.search(buildQuery($scope.songName, $scope.songArtist), 'track').then(function (data) {
+      $scope.spotifyResults = data.tracks.items;
+    });
+  };
+
+  $scope.getSpotifyResults();
+
+  $scope.updateMetadata = function(song) {
+    console.log(song);
+    $('.simple-dialog-content input[data-field="1"]').val(song.name);
+    $('.simple-dialog-content input[data-field="3"]').val(song.artists[0].name);
+    $('.simple-dialog-content input[data-field="5"]').val(song.artists[0].name);
+    $('.simple-dialog-content input[data-field="4"]').val(song.album.name);
+    Spotify.getAlbum(song.album.id).then(function(data){
+      console.log(data);
+      $('.simple-dialog-content input[data-field="18"]').val(data.release_date.substring(0,4));
+      $scope.hide();
+    });
+  }
 
   $scope.hide = function() {
     $mdDialog.hide();
-  };
-  $scope.cancel = function() {
-    $mdDialog.cancel();
-  };
-  $scope.answer = function(answer) {
-    $mdDialog.hide(answer);
   };
 });

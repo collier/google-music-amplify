@@ -14,19 +14,19 @@
     <form name="userForm">
       <div layout layout-sm="column">
         <md-input-container flex>
-          <label>Name</label>
-          <input ng-model="songName">
+          <label>Track</label>
+          <input ng-model="songName" ng-blur="getSpotifyResults()">
         </md-input-container>
         <md-input-container flex>
           <label>Artist</label>
-          <input ng-model="songArtist">
+          <input ng-model="songArtist" ng-blur="getSpotifyResults()">
         </md-input-container>
       </div>
     </form>
     <md-list>
-      <md-subheader class="md-no-sticky">Songs</md-subheader>
-      <md-list-item class="md-3-line" ng-repeat="song in spotifyResults">
-      <img ng-src="{{song.album.images[1].url}}" class=""/>
+      <md-subheader>Songs</md-subheader>
+      <md-list-item class="md-3-line" ng-repeat="song in spotifyResults" ng-click="updateMetadata(song)">
+      <img ng-src="{{song.album.images[1].url}}" />
         <div class="md-list-item-text">
           <h3>{{song.name}}</h3>
           <h4>{{song.album.name}}</h4>
@@ -36,16 +36,8 @@
     </md-list>
   </md-dialog-content>
   <div class="md-actions" layout="row">
-    <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" hide show-md>
-      More on Wikipedia
-    </md-button>
-    <span flex></span>
-    <md-button ng-click="answer('not useful')" class="md-primary">
-     Not Useful
-    </md-button>
-    <md-button ng-click="answer('useful')" class="md-primary">
-      Useful
+    <md-button ng-click="hide()" class="md-primary">
+      Done
     </md-button>
   </div>
-  </form>
 </md-dialog>
