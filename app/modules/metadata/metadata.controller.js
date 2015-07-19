@@ -1,4 +1,9 @@
-angular.module('metadata', ['ngMaterial','spotify'])
+angular.module('metadata', ['ngMaterial','spotify','lastfm'])
+
+.config(function(LastFmProvider){
+  SpotifyProvider.apiKey('');
+  SpotifyProvider.setRedirectUri('<CALLBACK_URI>');
+})
 
 .controller('MetadataCtrl', function($scope, $mdDialog) {
   $scope.alert = '';
@@ -12,7 +17,7 @@ angular.module('metadata', ['ngMaterial','spotify'])
   };
 })
 
-.controller('DialogCtrl', function($scope, $mdDialog, Spotify) {
+.controller('DialogCtrl', function($scope, $mdDialog, Spotify, lastfm) {
   $scope.songName = angular.copy($('.simple-dialog-content input[data-field="1"]').attr('data-original'));
   $scope.songArtist = angular.copy($('.simple-dialog-content input[data-field="3"]').attr('data-original'));
 
@@ -25,11 +30,19 @@ angular.module('metadata', ['ngMaterial','spotify'])
 
   $scope.getSpotifyResults = function() {
     Spotify.search(buildQuery($scope.songName, $scope.songArtist), 'track').then(function (data) {
+      console.log(data);
       $scope.spotifyResults = data.tracks.items;
     });
   };
 
+  $scope.getLastFmResults = function() {
+    lastfm.searchTracks($scope.songName, $scope.songArtist).then(function (data) {
+      console.log(data);
+    });
+  };
+
   $scope.getSpotifyResults();
+  $scope.getLastFmResults();
 
   $scope.updateMetadata = function(song) {
     console.log(song);
