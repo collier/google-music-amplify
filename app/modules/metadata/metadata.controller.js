@@ -37,9 +37,13 @@ angular.module('metadata', ['ngMaterial','spotify'])
     $('.simple-dialog-content input[data-field="3"]').val(song.artists[0].name);
     $('.simple-dialog-content input[data-field="5"]').val(song.artists[0].name);
     $('.simple-dialog-content input[data-field="4"]').val(song.album.name);
+    $('.simple-dialog-content input[data-field="14"]').val(song.track_number);
+    $('.simple-dialog-content input[data-field="16"]').val(song.disc_number);
     Spotify.getAlbum(song.album.id).then(function(data){
       console.log(data);
       $('.simple-dialog-content input[data-field="18"]').val(data.release_date.substring(0,4));
+      $('.simple-dialog-content input[data-field="15"]').val(data.tracks.total);
+      $('.simple-dialog-content input[data-field="11"]').val(data.genres[0]);
       $scope.hide();
     });
   }
