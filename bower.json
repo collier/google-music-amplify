@@ -4,7 +4,6 @@
   "dependencies": {
     "jquery": "~1.11.3",
     "angular": "~1.4.3",
-    "angular-resource": "~1.4.3",
     "angular-material": "~0.10.1",
     "angular-spotify": "~1.0.0"
   },
