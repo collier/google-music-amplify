@@ -4,8 +4,8 @@
     <div class="md-toolbar-tools">
       <h2>Find Metadata</h2>
       <span flex></span>
-      <md-button class="md-icon-button" ng-click="answer('not applicable')">
-        <md-icon md-svg-src="chrome-extension://__MSG_@@extension_id__/images/ic_clear_white_24px.svg" aria-label="Close dialog"></md-icon>
+      <md-button class="md-icon-button" ng-click="hide()">
+        <md-icon md-svg-src="" aria-label="Close dialog"></md-icon>
       </md-button>
     </div>
   </md-toolbar>
@@ -29,8 +29,8 @@
       <img ng-src="{{song.album.images[1].url}}" />
         <div class="md-list-item-text">
           <h3>{{song.name}}</h3>
-          <h4>{{song.album.name}}</h4>
-          <p>{{song.album.album_type}}</p>
+          <h4>{{song.artists[0].name}}</h4>
+          <p>{{song.album.name}} - {{song.album.album_type}}</p>
         </div>
       </md-list-item>
     </md-list>

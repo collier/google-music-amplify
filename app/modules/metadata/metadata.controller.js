@@ -2,13 +2,20 @@ angular.module('metadata', ['ngMaterial','spotify'])
 
 .controller('MetadataBtnCtrl', function($scope, $mdDialog) {
   $scope.alert = '';
+
   $scope.showDialog = function(ev) {
     $mdDialog.show({
       controller: 'DialogCtrl',
       templateUrl: chrome.extension.getURL('modules/metadata/dialog.html'),
       parent: angular.element(document.body),
+      onComplete: $scope.displayCloseIcon,
       targetEvent: ev
     });
+  };
+
+  $scope.displayCloseIcon = function() {
+    var exitIco = chrome.extension.getURL('images/ic_clear_black_24px.svg');
+    $('md-icon[aria-label="Close dialog"]').attr('md-svg-src', exitIco);
   };
 })
 
@@ -38,6 +45,10 @@ angular.module('metadata', ['ngMaterial','spotify'])
     $('.simple-dialog-content input[data-field="4"]').val(song.album.name);
     $('.simple-dialog-content input[data-field="14"]').val(song.track_number);
     $('.simple-dialog-content input[data-field="16"]').val(song.disc_number);
+    $('.simple-dialog-content .album-image a.download')
+      .attr('download',song.album.name+song.name)
+      .attr('href',song.album.images[0].url)
+      .show();
     Spotify.getAlbum(song.album.id).then(function(data){
       $('.simple-dialog-content input[data-field="18"]').val(data.release_date.substring(0,4));
       $('.simple-dialog-content input[data-field="15"]').val(data.tracks.total);

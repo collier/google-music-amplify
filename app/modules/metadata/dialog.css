@@ -30,6 +30,11 @@ md-input-container {
   margin: 0 !important;
 }
 
+.md-list-item-text p {
+  padding-top: 5px;
+  font-size: 11px !important;
+}
+
 md-list-item img {
   width: 65px;
   height: 65px;
