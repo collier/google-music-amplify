@@ -8,15 +8,10 @@ angular.module('metadata', ['ngMaterial','spotify'])
       controller: 'DialogCtrl',
       templateUrl: chrome.extension.getURL('modules/metadata/dialog.html'),
       parent: angular.element(document.body),
-      onComplete: $scope.displayCloseIcon,
       targetEvent: ev
     });
   };
 
-  $scope.displayCloseIcon = function() {
-    var exitIco = chrome.extension.getURL('images/ic_clear_black_24px.svg');
-    $('md-icon[aria-label="Close dialog"]').attr('md-svg-src', exitIco);
-  };
 })
 
 .controller('DialogCtrl', function($scope, $mdDialog, Spotify) {

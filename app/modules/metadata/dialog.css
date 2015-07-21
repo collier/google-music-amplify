@@ -35,6 +35,10 @@ md-input-container {
   font-size: 11px !important;
 }
 
+md-icon.gma-close {
+  background: no-repeat url('chrome-extension://__MSG_@@extension_id__/images/sprites_extended_d5d41cbe37133fce94c32acca2b8435c21125ddb.png') -1860px -1316px;
+}
+
 md-list-item img {
   width: 65px;
   height: 65px;

@@ -52,6 +52,7 @@
     }
   ],
   "web_accessible_resources": [
+    "images/*.png",
     "modules/*/*.css",
     "modules/*/*.html"
   ]
