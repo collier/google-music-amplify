@@ -1,11 +1,6 @@
-angular.module('metadata', ['ngMaterial','spotify','lastfm'])
+angular.module('metadata', ['ngMaterial','spotify'])
 
-.config(function(LastFmProvider){
-  SpotifyProvider.apiKey('');
-  SpotifyProvider.setRedirectUri('<CALLBACK_URI>');
-})
-
-.controller('MetadataCtrl', function($scope, $mdDialog) {
+.controller('MetadataBtnCtrl', function($scope, $mdDialog) {
   $scope.alert = '';
   $scope.showDialog = function(ev) {
     $mdDialog.show({
@@ -17,7 +12,7 @@ angular.module('metadata', ['ngMaterial','spotify','lastfm'])
   };
 })
 
-.controller('DialogCtrl', function($scope, $mdDialog, Spotify, lastfm) {
+.controller('DialogCtrl', function($scope, $mdDialog, Spotify) {
   $scope.songName = angular.copy($('.simple-dialog-content input[data-field="1"]').attr('data-original'));
   $scope.songArtist = angular.copy($('.simple-dialog-content input[data-field="3"]').attr('data-original'));
 
@@ -30,22 +25,13 @@ angular.module('metadata', ['ngMaterial','spotify','lastfm'])
 
   $scope.getSpotifyResults = function() {
     Spotify.search(buildQuery($scope.songName, $scope.songArtist), 'track').then(function (data) {
-      console.log(data);
       $scope.spotifyResults = data.tracks.items;
     });
   };
 
-  $scope.getLastFmResults = function() {
-    lastfm.searchTracks($scope.songName, $scope.songArtist).then(function (data) {
-      console.log(data);
-    });
-  };
-
   $scope.getSpotifyResults();
-  $scope.getLastFmResults();
 
   $scope.updateMetadata = function(song) {
-    console.log(song);
     $('.simple-dialog-content input[data-field="1"]').val(song.name);
     $('.simple-dialog-content input[data-field="3"]').val(song.artists[0].name);
     $('.simple-dialog-content input[data-field="5"]').val(song.artists[0].name);
@@ -53,7 +39,6 @@ angular.module('metadata', ['ngMaterial','spotify','lastfm'])
     $('.simple-dialog-content input[data-field="14"]').val(song.track_number);
     $('.simple-dialog-content input[data-field="16"]').val(song.disc_number);
     Spotify.getAlbum(song.album.id).then(function(data){
-      console.log(data);
       $('.simple-dialog-content input[data-field="18"]').val(data.release_date.substring(0,4));
       $('.simple-dialog-content input[data-field="15"]').val(data.tracks.total);
       $('.simple-dialog-content input[data-field="11"]').val(data.genres[0]);

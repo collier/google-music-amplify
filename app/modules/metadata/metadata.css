@@ -3,7 +3,7 @@ button[name="use-suggestions"] {
   float: none !important;
 }
 
-.gma-metadata, div[ng-controller="MetadataCtrl"] {
+.gma-metadata, div[ng-controller="MetadataBtnCtrl"] {
   display: inline;
 }
 
