@@ -1,8 +1,8 @@
 {
-  "name": "__MSG_appName__",
+  "name": "Google Music Amplify",
   "version": "0.0.3",
   "manifest_version": 2,
-  "description": "__MSG_appDescription__",
+  "description": "A chrome extension that adds features to Google Music for fetching metadata",
   "icons": {
     "16": "images/icon-16.png",
     "128": "images/icon-128.png"
@@ -10,7 +10,6 @@
   "default_locale": "en",
   "background": {
     "scripts": [
-      "scripts/chromereload.js",
       "scripts/background.js"
     ]
   },
@@ -33,6 +32,7 @@
         "https://play.google.com/music/*"
       ],
       "js": [
+        "bundle.js",
         "bower_components/jquery/dist/jquery.min.js",
         "bower_components/angular/angular.js",
         "bower_components/angular-material/angular-material.js",
@@ -40,8 +40,8 @@
         "bower_components/angular-aria/angular-aria.js",
         "bower_components/angular-spotify/src/angular-spotify.js",
         "scripts/app.js",
-        "modules/metadata/metadata.injector.js",
-        "modules/metadata/metadata.controller.js",
+        "modules/metadata-btn/metadata-btn.js",
+        "modules/metadata-dialog/metadata-dialog.js",
         "scripts/init.js"
       ],
       "css": [

@@ -1,4 +1,4 @@
-angular.module('metadata', ['ngMaterial','spotify'])
+angular.module('metadata.find-btn', ['ngMaterial'])
 
 .controller('MetadataBtnCtrl', function($scope, $mdDialog) {
   $scope.alert = '';
@@ -12,7 +12,10 @@ angular.module('metadata', ['ngMaterial','spotify'])
     });
   };
 
-})
+});
+
+
+angular.module('metadata.find-dialog', ['ngMaterial','spotify'])
 
 .controller('DialogCtrl', function($scope, $mdDialog, Spotify) {
   $scope.songName = angular.copy($('.simple-dialog-content input[data-field="1"]').attr('data-original'));
