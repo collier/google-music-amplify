@@ -10,7 +10,7 @@
   "default_locale": "en",
   "background": {
     "scripts": [
-      "scripts/background.js"
+      "background.js"
     ]
   },
   "page_action": {
@@ -32,20 +32,10 @@
         "https://play.google.com/music/*"
       ],
       "js": [
-        "bundle.js",
-        "bower_components/jquery/dist/jquery.min.js",
-        "bower_components/angular/angular.js",
-        "bower_components/angular-material/angular-material.js",
-        "bower_components/angular-animate/angular-animate.js",
-        "bower_components/angular-aria/angular-aria.js",
-        "bower_components/angular-spotify/src/angular-spotify.js",
-        "scripts/app.js",
-        "modules/metadata-btn/metadata-btn.js",
-        "modules/metadata-dialog/metadata-dialog.js",
-        "scripts/init.js"
+        "bundle.js"
       ],
       "css": [
-        "bower_components/angular-material/angular-material.css"
+        "css/angular-material.css"
       ],
       "run_at": "document_end",
       "all_frames": false

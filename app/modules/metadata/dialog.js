@@ -1,23 +1,8 @@
-angular.module('metadata.find-btn', ['ngMaterial'])
+'use strict';
 
-.controller('MetadataBtnCtrl', function($scope, $mdDialog) {
-  $scope.alert = '';
+var $ = require('jquery');
 
-  $scope.showDialog = function(ev) {
-    $mdDialog.show({
-      controller: 'DialogCtrl',
-      templateUrl: chrome.extension.getURL('modules/metadata/dialog.html'),
-      parent: angular.element(document.body),
-      targetEvent: ev
-    });
-  };
-
-});
-
-
-angular.module('metadata.find-dialog', ['ngMaterial','spotify'])
-
-.controller('DialogCtrl', function($scope, $mdDialog, Spotify) {
+module.exports = function($scope, $mdDialog, Spotify) {
   $scope.songName = angular.copy($('.simple-dialog-content input[data-field="1"]').attr('data-original'));
   $scope.songArtist = angular.copy($('.simple-dialog-content input[data-field="3"]').attr('data-original'));
 
@@ -58,4 +43,4 @@ angular.module('metadata.find-dialog', ['ngMaterial','spotify'])
   $scope.hide = function() {
     $mdDialog.hide();
   };
-});
+};

@@ -3,7 +3,7 @@ button[name="use-suggestions"] {
   float: none !important;
 }
 
-.gma-metadata, div[ng-controller="MetadataBtnCtrl"] {
+.gma-metadata, div[ng-controller="FindBtnCtrl"] {
   display: inline;
 }
 
@@ -65,12 +65,4 @@ input[name="search-metadata"]:hover {
 
 .md-dialog-container {
   z-index: 1200;
-}
-
-.simple-dialog-content .album-image a.download {
-  font-size: 10px;
-  position: absolute;
-  top: 77px;
-  left: 416px;
-  display: none;
 }

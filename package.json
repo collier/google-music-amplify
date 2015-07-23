@@ -1,8 +1,22 @@
 {
   "name": "google-music-amplify",
   "version": "0.0.0",
-  "dependencies": {},
+  "main": "app/content.js",
+  "scripts": {
+    "build": "browserify app/content.js -o app/bundle.js",
+    "watch": "watchify app/content.js -o app/bundle.js"
+  },
+  "dependencies": {
+    "angular": "^1.4.3",
+    "angular-animate": "^1.4.3",
+    "angular-aria": "^1.4.3",
+    "angular-material": "^0.10.0",
+    "angular-spotify": "^1.1.0",
+    "jquery": "^2.1.4",
+    "load-css-file": "^1.0.0"
+  },
   "devDependencies": {
+    "brfs": "^1.4.0",
     "browserify": "^11.0.0",
     "grunt": "~0.4.1",
     "grunt-bower-install": "~1.0.0",
@@ -24,7 +38,13 @@
     "grunt-usemin": "~2.1.0",
     "jshint-stylish": "~0.1.5",
     "load-grunt-tasks": "~0.4.0",
-    "time-grunt": "~0.3.1"
+    "time-grunt": "~0.3.1",
+    "watchify": "^3.3.0"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
   },
   "engines": {
     "node": ">=0.8.0"

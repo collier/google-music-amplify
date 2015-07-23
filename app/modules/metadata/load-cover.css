@@ -1,0 +1,8 @@
+
+.simple-dialog-content .album-image a.download {
+  font-size: 10px;
+  position: absolute;
+  top: 77px;
+  left: 416px;
+  display: none;
+}
