@@ -42,7 +42,7 @@
     }
   ],
   "web_accessible_resources": [
-    "images/*.png",
+    "images/*.svg",
     "modules/*/*.css",
     "modules/*/*.html"
   ]

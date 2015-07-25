@@ -36,7 +36,8 @@ md-input-container {
 }
 
 md-icon.gma-close {
-  background: no-repeat url('chrome-extension://__MSG_@@extension_id__/images/sprites_extended_d5d41cbe37133fce94c32acca2b8435c21125ddb.png') -1860px -1316px;
+  background: no-repeat url('chrome-extension://__MSG_@@extension_id__/images/ic_clear_white_24px.svg');
+
 }
 
 md-list-item img {
