@@ -18,6 +18,7 @@
   "devDependencies": {
     "brfs": "^1.4.0",
     "browserify": "^11.0.0",
+    "browserify-css": "^0.6.1",
     "grunt": "~0.4.1",
     "grunt-bower-install": "~1.0.0",
     "grunt-chrome-manifest": "~0.2.0",
@@ -45,6 +46,10 @@
     "transform": [
       "brfs"
     ]
+  },
+  "browserify-css": {
+    "autoInject": false,
+    "minify": true
   },
   "engines": {
     "node": ">=0.8.0"

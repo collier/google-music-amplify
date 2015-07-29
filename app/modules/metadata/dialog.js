@@ -8,8 +8,9 @@ module.exports = function($scope, $mdDialog, Spotify) {
 
   var buildQuery = function(track, artist) {
     var result='track:"'+track+'"';
-    if(artist)
+    if(artist) {
       result+='+artist:"'+artist+'"';
+    }
     return result;
   };
 
@@ -32,13 +33,13 @@ module.exports = function($scope, $mdDialog, Spotify) {
       .attr('download',song.album.name+song.name)
       .attr('href',song.album.images[0].url)
       .show();
-    Spotify.getAlbum(song.album.id).then(function(data){
+    Spotify.getAlbum(song.album.id).then(function(data) {
       $('.simple-dialog-content input[data-field="18"]').val(data.release_date.substring(0,4));
       $('.simple-dialog-content input[data-field="15"]').val(data.tracks.total);
       $('.simple-dialog-content input[data-field="11"]').val(data.genres[0]);
       $scope.hide();
     });
-  }
+  };
 
   $scope.hide = function() {
     $mdDialog.hide();

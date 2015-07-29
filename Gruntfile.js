@@ -113,6 +113,7 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= config.app %>/scripts/{,*/}*.js',
+        '<%= config.app %>/modules/{,*/}*.js',
         '!<%= config.app %>/scripts/vendor/*',
         'test/spec/{,*/}*.js'
       ]
@@ -154,7 +155,10 @@ module.exports = function (grunt) {
         assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/images']
       },
       html: ['<%= config.dist %>/{,*/}*.html'],
-      css: ['<%= config.dist %>/styles/{,*/}*.css']
+      css: [
+        '<%= config.dist %>/styles/{,*/}*.css',
+        '<%= config.dist %>/modules/{,*/}*.css'
+      ]
     },
 
     // The following *-min tasks produce minifies files in the dist folder
@@ -239,6 +243,8 @@ module.exports = function (grunt) {
             'images/{,*/}*.{webp,gif}',
             '{,*/}*.html',
             'styles/{,*/}*.css',
+            'css/{,*/}*.css',
+            'modules/{,*/}*.{html,css,js,json}',
             'styles/fonts/{,*/}*.*',
             '_locales/{,*/}*.json',
           ]
@@ -265,7 +271,7 @@ module.exports = function (grunt) {
           buildnumber: true,
           indentSize: 2,
           background: {
-            target: 'scripts/background.js',
+            target: 'background.js',
             exclude: [
               'scripts/chromereload.js'
             ]
