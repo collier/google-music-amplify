@@ -31,6 +31,6 @@ $(function() {
         angular.bootstrap(document, ['GMA_Metadata']);
       }
 
-    },400);
+    },700);
   });
 });
