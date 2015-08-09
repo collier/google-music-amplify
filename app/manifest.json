@@ -34,6 +34,8 @@
         "bower_components/materialize/dist/js/materialize.min.js",
         "bower_components/rivets/dist/rivets.bundled.min.js",
         "modules/metadata/metadata.js",
+        "modules/metadata/find-btn/find-btn.js",
+        "modules/metadata/dialog/dialog.js",
         "utils.js",
         "google-music-amplify.js"
       ],

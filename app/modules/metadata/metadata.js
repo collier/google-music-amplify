@@ -14,14 +14,16 @@
         // clicked, wait for popup to load, then add Find Metadata button
         $('#\\:i').click(function() {
           setTimeout(function() {
-            var btnsContainer = $('.simple-dialog.edit-dialog .simple-dialog-buttons');
+            var $btnsContainer = $('.simple-dialog.edit-dialog .simple-dialog-buttons');
+            var $albumImgContainer = $('.simple-dialog-content .album-image');
+            var $searchMetadataBtn = $btnsContainer.find('input[name="search-metadata"]');
             Util.getView('metadata/load-cover/load-cover', function(html) {
-              $('.simple-dialog-content .album-image').prepend(html);
+              $albumImgContainer.prepend(html);
             });
-            if(btnsContainer.find('input[name="search-metadata"]').length === 0) {
+            if($searchMetadataBtn.length === 0) {
               Util.getView('metadata/find-btn/find-btn', function(html) {
-                btnsContainer.append(html);
-                // angular.bootstrap(document,['GMA_Metadata']);
+                $btnsContainer.append(html);
+                Metadata.DialogCtrl.init();
               });
             }
           }, 700);

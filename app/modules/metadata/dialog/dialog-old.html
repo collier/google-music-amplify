@@ -1,0 +1,43 @@
+<md-dialog aria-label="Mango (Fruit)">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Find Metadata</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="hide()">
+        <md-icon class="gma-close" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+  <md-content layout-padding>
+    <form name="userForm">
+      <div layout layout-sm="column">
+        <md-input-container flex>
+          <label>Track</label>
+          <input ng-model="songName" ng-blur="getSpotifyResults()">
+        </md-input-container>
+        <md-input-container flex>
+          <label>Artist</label>
+          <input ng-model="songArtist" ng-blur="getSpotifyResults()">
+        </md-input-container>
+      </div>
+    </form>
+    <md-list>
+      <md-subheader>Songs</md-subheader>
+      <md-list-item class="md-3-line" ng-repeat="song in spotifyResults" ng-click="updateMetadata(song)">
+      <img ng-src="{{song.album.images[1].url}}" />
+        <div class="md-list-item-text">
+          <h3>{{song.name}}</h3>
+          <h4>{{song.artists[0].name}}</h4>
+          <p>{{song.album.name}} - {{song.album.album_type}}</p>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+    <md-button ng-click="hide()" class="md-primary">
+      Done
+    </md-button>
+  </div>
+</md-dialog>

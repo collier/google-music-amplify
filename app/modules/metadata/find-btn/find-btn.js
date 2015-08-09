@@ -1,17 +1,21 @@
 (function(global) {
   'use strict';
 
-  Metadata.DialogCtrl = (function() {
+  Metadata.FindBtnCtrl = (function() {
 
     return {
       init: function() {
-        var dialog = new Vue({
-          el: '.gma-metadata-btn'
+        rivets.bind($('input[name="search-metadata"]'), {
+          FindBtnCtrl: Metadata.FindBtnCtrl
         });
+      },
+
+      showDialog: function() {
+        Metadata.DialogCtrl.init();
       }
     };
   })();
 
-  global.Metadata.DialogCtrl = Metadata.DialogCtrl;
+  global.Metadata.FindBtnCtrl = Metadata.FindBtnCtrl;
 
 })(this);
