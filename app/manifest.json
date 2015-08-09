@@ -30,10 +30,15 @@
         "https://play.google.com/music/*"
       ],
       "js": [
-        "bundle.js"
+        "bower_components/jquery/dist/jquery.min.js",
+        "bower_components/materialize/dist/js/materialize.min.js",
+        "bower_components/rivets/dist/rivets.bundled.min.js",
+        "modules/metadata/metadata.js",
+        "utils.js",
+        "google-music-amplify.js"
       ],
       "css": [
-        "css/angular-material.css"
+        "bower_components/materialize/dist/css/materialize.min.css"
       ],
       "run_at": "document_end",
       "all_frames": false
@@ -41,7 +46,6 @@
   ],
   "web_accessible_resources": [
     "images/*.svg",
-    "modules/*/*.css",
-    "modules/*/*.html"
+    "modules/*"
   ]
 }
