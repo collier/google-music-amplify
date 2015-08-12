@@ -18,7 +18,7 @@
           setTimeout(function() {
             var $btnsContainer = $('.simple-dialog.edit-dialog .simple-dialog-buttons');
             var $albumImgContainer = $('.simple-dialog-content .album-image');
-            var $searchMetadataBtn = $btnsContainer.find('input[name="search-metadata"]');
+            var $searchMetadataBtn = $btnsContainer.find('.search-btn');
             Util.getView('metadata/load-cover/load-cover', function(html) {
               $albumImgContainer.prepend(html);
             });
