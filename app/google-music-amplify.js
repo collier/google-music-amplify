@@ -1,15 +1,13 @@
-/*
-* Google Music Amplify
-* https://goo.gl/eDSTo2
-* (c) 2015 DJ Collier (https://djcollier.com)
-* Google Music Amplify may be freely distributed under the MIT license
-*/
-
+/**
+ * Google Music Amplify
+ * https://goo.gl/eDSTo2
+ * (c) 2015 DJ Collier (https://djcollier.com)
+ * Google Music Amplify may be freely distributed under the MIT license
+ */
 (function(global) {
   'use strict';
 
   var GoogleMusicAmplify = (function() {
-
     return {
       // Initiates all enabled modules
       init:  function() {

@@ -33,21 +33,18 @@
         "bower_components/jquery/dist/jquery.min.js",
         "bower_components/materialize/dist/js/materialize.min.js",
         "bower_components/rivets/dist/rivets.bundled.min.js",
+        "modules/utils/utils.js",
         "modules/metadata/metadata.js",
-        "modules/metadata/find-btn/find-btn.js",
-        "modules/metadata/dialog/dialog.js",
-        "utils.js",
+        "modules/metadata/modal/modal.js",
         "google-music-amplify.js"
-      ],
-      "css": [
-        "bower_components/materialize/dist/css/materialize.min.css"
       ],
       "run_at": "document_end",
       "all_frames": false
     }
   ],
   "web_accessible_resources": [
-    "images/*.svg",
+    "bower_components/materialize/dist/*",
+    "images/*",
     "modules/*"
   ]
 }

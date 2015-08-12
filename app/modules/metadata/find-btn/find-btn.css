@@ -3,17 +3,16 @@ button[name="use-suggestions"] {
   float: none !important;
 }
 
-.gma-metadata, div[ng-controller="FindBtnCtrl"] {
+.gma-metadata {
   display: inline;
 }
-
 /*
  * Google music had some sort of event on all buttons that would simply
  * close the dialog altogether. In order to avoid this, I do not use a
  * button tag, but rather an input tag of type button. This means I need
  * to transfer all the relavent styles.
  */
-input[name="search-metadata"] {
+.gma-metadata .search-btn {
   background-color: #4FC3F7 !important;
   float: right !important;
   margin-right: 0 !important;
@@ -52,7 +51,7 @@ input[name="search-metadata"] {
   -webkit-writing-mode: horizontal-tb;
 }
 
-input[name="search-metadata"]:hover {
+.gma-metadata .search-btn:hover {
   background-color: #4FC3F7 !important;
   box-shadow: inset 0 -2px 0 rgba(0,0,0,.27);
   background-image: none;
