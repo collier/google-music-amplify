@@ -6,8 +6,10 @@
       //Adds styles, content, and listeners used as part of the Metadata
       init: function() {
         // Add styles
-        Util.injectStylesheet('metadata/find-btn/find-btn');
-        Util.injectStylesheet('metadata/load-cover/load-cover');
+        Util.injectLinks([
+          'modules/metadata/find-btn/find-btn.css',
+          'modules/metadata/load-cover/load-cover.css'
+        ]);
         /**
         * Add event listener for the "Edit Info" drop down option. When
         * clicked, wait for popup to load, then add Find Metadata button

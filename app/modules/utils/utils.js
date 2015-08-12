@@ -1,20 +1,21 @@
 (function(global) {
- 'use strict';
+  'use strict';
 
   var Util = (function() {
     return {
       /**
-       * Appends new link tag to head which contains location of an extension
-       * stylesheet. Allows override of page styles with !important marker.
+       * Appends new link tags to head which contain locations of extension
+       * stylesheets. Allows override of page styles with !important marker.
        */
-      injectStylesheet: function(location) {
-        var head = document.head;
-        var link = document.createElement('link');
-        var sheetPathName = 'modules/' + location + '.css';
-        link.type = 'text/css';
-        link.rel = 'stylesheet';
-        link.href = chrome.extension.getURL(sheetPathName);
-        head.appendChild(link);
+      injectLinks: function(locations) {
+        locations.forEach(function(location){
+          var head = document.head;
+          var link = document.createElement('link');
+          link.type = 'text/css';
+          link.rel = 'stylesheet';
+          link.href = chrome.extension.getURL(location);
+          head.appendChild(link);
+        });
       },
 
       /**
