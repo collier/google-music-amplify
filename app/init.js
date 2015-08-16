@@ -9,23 +9,27 @@
 
   var GoogleMusicAmplify = (function() {
     return {
-      // Initiates all enabled modules
       init:  function() {
         // Template delimiters for text bindings
         rivets.configure({
           templateDelimiters: ['{{', '}}'],
         });
+        // Inject universal styles
+        Util.injectLinks([
+          'utils/styles.css'
+        ]);
+        // Initiates all enabled modules
         Metadata.init();
       }
     };
   })();
 
-  // Kicks off extension
-  $(function() {
-    GoogleMusicAmplify.init();
-  });
-
   // Expose module to global object
   global.GoogleMusicAmplify = GoogleMusicAmplify;
 
 }(this));
+
+// Kicks off extension on document ready
+$(function() {
+  GoogleMusicAmplify.init();
+});

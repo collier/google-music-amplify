@@ -9,7 +9,11 @@
   },
   "default_locale": "en",
   "background": {
-    "scripts": [ "pageAction.js" ],
+    "scripts": [
+      "utils/utils.js",
+      "browsers/Chrome/pageAction.js",
+      "modules/Metadata/background/onMessages.js"
+    ],
     "persistance": false
   },
   "page_action": {
@@ -31,9 +35,11 @@
       "js": [
         "bower_components/jquery/dist/jquery.min.js",
         "bower_components/rivets/dist/rivets.bundled.min.js",
-        "modules/utils/utils.js",
-        "modules/metadata/metadata.js",
-        "modules/metadata/modal/modal.js",
+        "utils/utils.js",
+        "modules/Metadata/content/metadata.js",
+        "modules/Metadata/content/modal_frame/modalFrame.js",
+        "modules/Metadata/content/find_btn/findBtn.js",
+        "modules/Metadata/content/download_cover/downloadCover.js",
         "init.js"
       ],
       "run_at": "document_end",
@@ -41,9 +47,8 @@
     }
   ],
   "web_accessible_resources": [
-    "bower_components/materialize/dist/*",
     "images/*",
-    "background/modules/*",
-    "inject/modules/*"
+    "utils/*",
+    "modules/*"
   ]
 }

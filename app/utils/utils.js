@@ -34,7 +34,7 @@
 
       // Requests view from within chrome extension.
       getView: function(location, callback) {
-        var viewPathName = 'modules/' + location + '.html';
+        var viewPathName = '/modules/' + location + '.html';
         var extLocation = chrome.extension.getURL(viewPathName);
         var request = new XMLHttpRequest();
         request.open('GET', extLocation, true);

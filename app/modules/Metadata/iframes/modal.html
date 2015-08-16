@@ -1,0 +1,48 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="../../../bower_components/materialize/dist/css/materialize.min.css">
+      <link rel="stylesheet" href="../../../utils/styles.css">
+      <link rel="stylesheet" href="modal.css">
+    </head>
+    <body>
+      <div class="gma-metadata">
+        <div class="modal modal-fixed-footer">
+          <div class="modal-header light-blue lighten-2 vh-center">
+            <h4>Find Metadata</h4>
+            <span flex=""></span>
+            <a class="modal-action modal-close"></a>
+          </div>
+          <div class="modal-content">
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input id="track" type="text">
+                    <label for="track">Track</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="artist" type="text">
+                    <label for="artist">Artist</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-green btn-flat">done</a>
+          </div>
+        </div>
+      </div>
+      <script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+      <script src="../../../bower_components/materialize/dist/js/materialize.min.js"></script>
+      <script src="../../../bower_components/rivets/dist/rivets.bundled.min.js"></script>
+      <script src="../../../utils/utils.js"></script>
+      <script src="modal.js"></script>
+    </body>
+</html>

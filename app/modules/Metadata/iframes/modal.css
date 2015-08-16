@@ -1,3 +1,7 @@
+body {
+  font-family: "Roboto", sans-serif !important;
+}
+
 .modal {
   max-height: 690px;
   min-width: 470px;
