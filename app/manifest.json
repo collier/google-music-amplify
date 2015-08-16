@@ -9,9 +9,8 @@
   },
   "default_locale": "en",
   "background": {
-    "scripts": [
-      "background.js"
-    ]
+    "scripts": [ "pageAction.js" ],
+    "persistance": false
   },
   "page_action": {
     "default_icon": {
@@ -31,12 +30,11 @@
       ],
       "js": [
         "bower_components/jquery/dist/jquery.min.js",
-        "bower_components/materialize/dist/js/materialize.min.js",
         "bower_components/rivets/dist/rivets.bundled.min.js",
         "modules/utils/utils.js",
         "modules/metadata/metadata.js",
         "modules/metadata/modal/modal.js",
-        "google-music-amplify.js"
+        "init.js"
       ],
       "run_at": "document_end",
       "all_frames": false
@@ -45,6 +43,7 @@
   "web_accessible_resources": [
     "bower_components/materialize/dist/*",
     "images/*",
-    "modules/*"
+    "background/modules/*",
+    "inject/modules/*"
   ]
 }
