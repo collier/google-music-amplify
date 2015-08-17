@@ -10,14 +10,14 @@
       },
 
       sendClickEvent: function() {
-        var data = {};
-        data.songName = $('.simple-dialog-content input[data-field="1"]')
+        var song = {};
+        song.name = $('.simple-dialog-content input[data-field="1"]')
           .attr('data-original');
-        data.artist = $('.simple-dialog-content input[data-field="3"]')
+        song.artist = $('.simple-dialog-content input[data-field="3"]')
           .attr('data-original');
         chrome.runtime.sendMessage({
           operation: "metdata.find",
-          payload: data
+          payload: song
         });
       }
     };

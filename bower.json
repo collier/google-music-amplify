@@ -4,7 +4,8 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "materialize": "~0.97.0",
-    "rivets": "~0.8.1"
+    "rivets": "~0.8.1",
+    "spotify-web-api-js": "~0.15.0"
   },
   "devDependencies": {
     "chai": "~3.0.0",
