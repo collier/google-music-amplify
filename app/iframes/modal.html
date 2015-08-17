@@ -6,8 +6,7 @@
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" href="../../../bower_components/materialize/dist/css/materialize.min.css">
-      <link rel="stylesheet" href="../../../utils/styles.css">
+      <link rel="stylesheet" href="../bower_components/materialize/dist/css/materialize.min.css">
       <link rel="stylesheet" href="modal.css">
     </head>
     <body>
@@ -16,7 +15,7 @@
           <div class="modal-header light-blue lighten-2 vh-center">
             <h4>Find Metadata</h4>
             <span flex=""></span>
-            <a class="modal-action modal-close"></a>
+            <a class="modal-action modal-close" rv-on-click="Modal.hide"></a>
           </div>
           <div class="modal-content">
             <div class="row">
@@ -35,14 +34,13 @@
             </div>
           </div>
           <div class="modal-footer">
-            <a class="modal-action modal-close waves-effect waves-green btn-flat">done</a>
+            <a class="modal-action modal-close waves-effect waves-green btn-flat" rv-on-click="Modal.hide">done</a>
           </div>
         </div>
       </div>
-      <script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
-      <script src="../../../bower_components/materialize/dist/js/materialize.min.js"></script>
-      <script src="../../../bower_components/rivets/dist/rivets.bundled.min.js"></script>
-      <script src="../../../utils/utils.js"></script>
+      <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+      <script src="../bower_components/materialize/dist/js/materialize.min.js"></script>
+      <script src="../bower_components/rivets/dist/rivets.bundled.min.js"></script>
       <script src="modal.js"></script>
     </body>
 </html>

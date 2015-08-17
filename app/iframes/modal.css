@@ -46,6 +46,11 @@ body {
   height: auto;
 }
 
+.vh-center {
+  justify-content: center;
+  align-items: center;
+}
+
 /*md-list {
   max-width: 380px;
 }

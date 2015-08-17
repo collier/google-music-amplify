@@ -14,10 +14,6 @@
         rivets.configure({
           templateDelimiters: ['{{', '}}'],
         });
-        // Inject universal styles
-        Util.injectLinks([
-          'utils/styles.css'
-        ]);
         // Initiates all enabled modules
         Metadata.init();
       }

@@ -11,7 +11,13 @@
         rivets.bind($('.gma-metadata'), {
           Modal: Modal
         });
-        $('.modal').openModal();
+        chrome.runtime.onMessage.addListener(
+          function(request, sender, sendResponse) {
+            if (request.operation === "metdata.find") {
+              $('.modal').openModal();
+            }
+          }
+        );
       },
 
       // Show find metadata modal
@@ -21,7 +27,13 @@
 
       // Show find metadata modal
       hide: function() {
-        $('.modal').closeModal();
+        $('.modal').closeModal({
+          complete: function() {
+            chrome.runtime.sendMessage({
+              operation: "metadata.exit"
+            });
+          }
+        });
       }
     };
   })();

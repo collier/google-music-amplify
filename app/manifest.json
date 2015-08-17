@@ -10,9 +10,7 @@
   "default_locale": "en",
   "background": {
     "scripts": [
-      "utils/utils.js",
-      "browsers/Chrome/pageAction.js",
-      "modules/Metadata/background/onMessages.js"
+      "background.js"
     ],
     "persistance": false
   },
@@ -35,12 +33,12 @@
       "js": [
         "bower_components/jquery/dist/jquery.min.js",
         "bower_components/rivets/dist/rivets.bundled.min.js",
-        "utils/utils.js",
-        "modules/Metadata/content/metadata.js",
-        "modules/Metadata/content/modal_frame/modalFrame.js",
-        "modules/Metadata/content/find_btn/findBtn.js",
-        "modules/Metadata/content/download_cover/downloadCover.js",
-        "init.js"
+        "content_scripts/utils.js",
+        "content_scripts/metadata/metadata.js",
+        "content_scripts/metadata/modal_frame/modalFrame.js",
+        "content_scripts/metadata/find_btn/findBtn.js",
+        "content_scripts/metadata/download_cover/downloadCover.js",
+        "content_scripts/init.js"
       ],
       "run_at": "document_end",
       "all_frames": false
@@ -48,7 +46,7 @@
   ],
   "web_accessible_resources": [
     "images/*",
-    "utils/*",
-    "modules/*"
+    "iframes/*",
+    "content_scripts/*"
   ]
 }

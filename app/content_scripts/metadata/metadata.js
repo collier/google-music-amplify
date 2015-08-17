@@ -7,12 +7,12 @@
       init: function() {
         // Add styles
         Util.injectLinks([
-          'modules/Metadata/content/find_btn/findBtn.css',
-          'modules/Metadata/content/download_cover/downloadCover.css',
-          'modules/Metadata/content/modal_frame/modalFrame.css'
+          'metadata/find_btn/findBtn',
+          'metadata/download_cover/downloadCover',
+          'metadata/modal_frame/modalFrame'
         ]);
         // Append metadata modal iframe to body
-        Util.getView('Metadata/content/modal_frame/modalFrame', function(html) {
+        Util.getView('metadata/modal_frame/modalFrame', function(html) {
           $('body').append(html);
           Metadata.ModalFrame.init();
         });
@@ -28,13 +28,13 @@
             var $searchMetadataBtn = $btnsContainer.find('.search-btn');
             var $downloadCoverArt = $albumImgContainer.find('.download');
             if($downloadCoverArt.length === 0) {
-              Util.getView('Metadata/content/download_cover/downloadCover', function(html) {
+              Util.getView('metadata/download_cover/downloadCover', function(html) {
                 $albumImgContainer.prepend(html);
                 Metadata.DownloadCover.init();
               });
             }
             if($searchMetadataBtn.length === 0) {
-              Util.getView('Metadata/content/find_btn/findBtn', function(html) {
+              Util.getView('metadata/find_btn/findBtn', function(html) {
                 $btnsContainer.append(html);
                 Metadata.FindBtn.init();
               });
