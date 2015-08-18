@@ -32,12 +32,14 @@
                 </div>
               </form>
               <ul class="collection">
+                <h5 class="collection-header">Songs</h5>
                 <li class="collection-item avatar" rv-each-track="Modal.metaList">
                   <img rv-src="track.album.imageUrl" alt="">
-                  <span class="title">{{track.name}}</span>
-                  <p>{{track.album.artist}} <br>
-                     {{track.album.name}} - {{track.album.album_type}}
-                  </p>
+                  <div class="collection-text-holder">
+                    <h3>{{track.name}}</h3>
+                    <p class="artist">{{track.album.artist}}</p>
+                    <p class="albumn-name">{{track.album.name}} - {{track.album.album_type}}</p>
+                  </div>
                 </li>
               </ul>
             </div>

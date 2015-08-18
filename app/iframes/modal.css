@@ -7,6 +7,8 @@ body {
   min-width: 470px;
   max-width: 470px;
   box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 4px;
 }
 
 .modal-header {
@@ -40,6 +42,11 @@ body {
 
 .modal-content {
   padding-top: 0 !important;
+  max-height: 600px !important;
+}
+
+.modal-content form .row {
+  margin: 0;
 }
 
 .modal.modal-fixed-footer .modal-content {
@@ -49,6 +56,61 @@ body {
 .vh-center {
   justify-content: center;
   align-items: center;
+}
+
+.collection .collection-item.avatar {
+  padding: 0;
+  border: none;
+  padding: 0 20px;
+}
+
+.collection .collection-item {
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 48px;
+}
+
+.collection .collection-item img {
+  width: 65px;
+  height: 65px;
+  margin-top: 13px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  box-sizing: content-box;
+}
+
+.collection {
+  border: 1px solid #fff;
+}
+
+.collection-header {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(0,0,0,0.54);
+  padding: 0 20px;
+  margin: 10px 0;
+}
+
+.collection-text-holder {
+  flex: 1 1 0%;
+  padding: 16px 0px;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+}
+
+.collection-text-holder h3 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.collection-text-holder > * {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /*md-list {
