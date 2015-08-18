@@ -31,6 +31,15 @@
                   </div>
                 </div>
               </form>
+              <ul class="collection">
+                <li class="collection-item avatar" rv-each-track="Modal.metaList">
+                  <img rv-src="track.album.imageUrl" alt="">
+                  <span class="title">{{track.name}}</span>
+                  <p>{{track.album.artist}} <br>
+                     {{track.album.name}} - {{track.album.album_type}}
+                  </p>
+                </li>
+              </ul>
             </div>
           </div>
           <div class="modal-footer">
@@ -41,6 +50,7 @@
       <script src="../bower_components/jquery/dist/jquery.min.js"></script>
       <script src="../bower_components/materialize/dist/js/materialize.min.js"></script>
       <script src="../bower_components/rivets/dist/rivets.bundled.min.js"></script>
+      <script src="../bower_components/spotify-web-api-js/src/spotify-web-api.js"></script>
       <script src="modal.js"></script>
     </body>
 </html>
