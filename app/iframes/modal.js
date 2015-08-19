@@ -35,12 +35,12 @@
       // Load songs from search into metaList
       loadMetadata: function() {
         var spotify = new SpotifyWebApi();
-        var query = 'track:"' + Modal.song.name + '"' ;
+        var query = 'track:"' + Modal.song.name + '"';
         if(Modal.song.artist) {
           query += '+artist:"' + Modal.song.artist + '"';
         }
         spotify.searchTracks(query, function(err, data) {
-          data.tracks.items.forEach(function(item){
+          data.tracks.items.forEach(function(item) {
             item.album.imageUrl = item.album.images[2].url;
             item.album.artist = item.artists[0].name;
             Modal.metaList.push(item);

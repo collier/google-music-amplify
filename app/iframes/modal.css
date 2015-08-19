@@ -11,14 +11,23 @@ body {
   border-radius: 4px;
 }
 
+.vh-center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Modal Header
+   ========================================================================== */
+
 .modal-header {
   min-height: 64px;
-  color: rgba(255,255,255,0.87);
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   padding: 0 16px;
   box-sizing: border-box;
+  color: #fff;
 }
 
 .modal-header h4 {
@@ -40,22 +49,52 @@ body {
   background: no-repeat url('chrome-extension://__MSG_@@extension_id__/images/ic_clear_white_24px.svg');
 }
 
+/* ==========================================================================
+   Modal Content
+   ========================================================================== */
+
 .modal-content {
-  padding-top: 0 !important;
+  padding: 0 15px 24px 15px !important;
   max-height: 600px !important;
 }
 
-.modal-content form .row {
-  margin: 0;
+.modal-content > .row {
+  padding: 8px;
 }
 
 .modal.modal-fixed-footer .modal-content {
   height: auto;
 }
 
-.vh-center {
-  justify-content: center;
-  align-items: center;
+/* Modal Form
+   ========================================================================== */
+
+.modal-content form .row {
+  margin: 0;
+}
+
+.modal-content form .row input{
+  height: 32px;
+  font-size: 13px;
+}
+
+.input-field label.active {
+  font-size: 10px;
+}
+
+/* Metadata List
+   ========================================================================== */
+
+.collection {
+ border: 1px solid #fff;
+}
+
+.collection-header {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(0,0,0,0.54);
+  padding: 0 20px;
+  margin: 10px 0;
 }
 
 .collection .collection-item.avatar {
@@ -81,30 +120,29 @@ body {
   box-sizing: content-box;
 }
 
-.collection {
-  border: 1px solid #fff;
-}
-
-.collection-header {
-  font-size: 18px;
-  font-weight: 500;
-  color: rgba(0,0,0,0.54);
-  padding: 0 20px;
-  margin: 10px 0;
-}
-
 .collection-text-holder {
   flex: 1 1 0%;
   padding: 16px 0px;
   box-sizing: border-box;
-  text-overflow: ellipsis;
 }
 
 .collection-text-holder h3 {
   font-size: 16px;
+  line-height: 16px;
   font-weight: 400;
   letter-spacing: 0.01em;
   margin: 0;
+}
+
+.collection-text-holder .artist {
+  line-height: 15px;
+  font-size: 15px;
+  padding-top: 7px;
+}
+
+.collection-text-holder .album-name {
+  padding-top: 3px;
+  font-size: 11px;
 }
 
 .collection-text-holder > * {
@@ -112,40 +150,3 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
-
-/*md-list {
-  max-width: 380px;
-}
-
-md-input-container {
-  padding-bottom: 5px;
-}
-
-.md-list-item-text h3, .md-list-item-text h4, .md-list-item-text p {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.md-list-item-text h3 {
-  line-height: 16px !important;
-}
-
-.md-list-item-text h4 {
-  line-height: 15px !important;
-  margin: 0 !important;
-}
-
-.md-list-item-text p {
-  padding-top: 5px;
-  font-size: 11px !important;
-}
-
-md-list-item img {
-  width: 65px;
-  height: 65px;
-  margin-top: 13px;
-  margin-bottom: 8px;
-  margin-right: 16px;
-  box-sizing: content-box;
-}*/
