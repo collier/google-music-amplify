@@ -120,6 +120,7 @@ module.exports = function (grunt) {
         'Gruntfile.js',
         '<%= config.app %>/content_scripts/{,*/}*.js',
         '<%= config.app %>/iframes/{,*/}*.js',
+        '<%= config.app %>/*.js',
         'test/spec/{,*/}*.js'
       ]
     },
@@ -247,8 +248,15 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'images/{,*/}*.{webp,gif}',
             '{,*/}*.html',
-            'content_scripts/{,*/}*.{html,css,js,json}',
-            'iframes/{,*/}*.{html,css,js,json}',
+            'bower_components/jquery/dist/jquery.min.js',
+            'bower_components/rivets/dist/rivets.bundled.min.js',
+            'bower_components/materialize/dist/css/materialize.min.css',
+            'bower_components/materialize/dist/js/materialize.min.js',
+            'bower_components/materialize/dist/font/roboto/Roboto-Regular.*',
+            'bower_components/materialize/dist/font/roboto/Roboto-Medium.*',
+            'bower_components/spotify-web-api-js/src/spotify-web-api.js',
+            'content_scripts/**',
+            'iframes/**',
             '_locales/{,*/}*.json',
           ]
         }]
@@ -323,9 +331,9 @@ module.exports = function (grunt) {
     'chromeManifest:dist',
     'useminPrepare',
     'concurrent:dist',
-    'cssmin',
+    // 'cssmin',
     'concat',
-    'uglify',
+    // 'uglify',
     'copy',
     'usemin',
     'compress'
