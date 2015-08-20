@@ -1,8 +1,13 @@
-.show-frame{
+.metadata-modal {
+  display: none;
+}
+
+.show-frame {
   z-index: 1200;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  display: inline;
 }

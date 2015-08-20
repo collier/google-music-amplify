@@ -2,62 +2,126 @@
   'use strict';
 
   var Modal = (function() {
+
+    // Define all the programmatically set strings
+    var strings = {
+      noInput: 'search by track or artist',
+      error: 'sorry, we encountered an errorg. try again later',
+      emptySet: 'no matching songs found :('
+    };
+
+    // Construct the Spotify track query string
+    var buildQuery = function() {
+      var query = 'track:"' + Modal.song.name + '"';
+      if(Modal.song.artist) {
+        query += '+artist:"' + Modal.song.artist + '"';
+      }
+      return query;
+    };
+
+    // Load songs from search into metaList
+    var loadMetadata = function() {
+      var spotify = new SpotifyWebApi();
+      if(!Modal.song.name && !Modal.song.artist) {
+        Modal.message = strings.noInput;
+      } else {
+        var query = buildQuery();
+        spotify.searchTracks(query, function(err, data) {
+          if(err) {
+            Modal.message = strings.error;
+          } else if (data.tracks.items.length === 0) {
+            Modal.message = strings.emptySet;
+          } else {
+            /**
+             * For some reason, Rivets.js does not support referencing
+             * array indecies inside of data objects. To address this,
+             * references needed are teased out and stored in new data objects
+             * without array indecies.
+             */
+            data.tracks.items.forEach(function(item) {
+              item.album.imageUrl = item.album.images[2].url;
+              item.album.artist = item.artists[0].name;
+              Modal.metaList.push(item);
+            });
+          }
+        });
+      }
+    };
+
+    // Reset all parameters back to their empty states
+    var reset = function() {
+      Modal.message = '';
+      Modal.metaList = [];
+      Modal.song.artist = '';
+      Modal.song.name = '';
+    };
+
+    var sendExitMessage = function() {
+      chrome.runtime.sendMessage({
+        operation: "metadata.exit"
+      });
+    };
+
     return {
+
       // Initialize song data object and metadata array
+      message: '',
       metaList: [],
       song: {
         artist: '',
         name: ''
       },
+
       /**
-      * Sets up rivets binding for the view, and create shadow root element
-      * using the modal template.
-      */
+       * Sets up rivets binding for the view, and create shadow root element
+       * using the modal template.
+       */
       init: function() {
         rivets.configure({
           templateDelimiters: ['{{', '}}'],
         });
         rivets.bind($('.gma-metadata'), {
+          // Pass all public methods into binding
           Modal: Modal
         });
         chrome.runtime.onMessage.addListener(
           function(request, sender, sendResponse) {
             if (request.operation === "metdata.find") {
+              reset();
               Modal.song = request.payload;
-              Modal.loadMetadata();
-              $('.input-field label').addClass('active');
-              $('.modal').openModal();
+              loadMetadata();
+              Modal.show();
+              $('.lean-overlay').click(function() {
+                sendExitMessage();
+              });
             }
           }
         );
       },
 
-      // Load songs from search into metaList
-      loadMetadata: function() {
-        var spotify = new SpotifyWebApi();
-        var query = 'track:"' + Modal.song.name + '"';
-        if(Modal.song.artist) {
-          query += '+artist:"' + Modal.song.artist + '"';
-        }
-        spotify.searchTracks(query, function(err, data) {
-          data.tracks.items.forEach(function(item) {
-            item.album.imageUrl = item.album.images[2].url;
-            item.album.artist = item.artists[0].name;
-            Modal.metaList.push(item);
-          })
-        });
+      // Refresh metalist with new search results
+      reloadMetadata: function() {
+        Modal.metaList = [];
+        Modal.message = '';
+        loadMetadata();
       },
 
       // Show find metadata modal
+      show: function() {
+        // Fix for labels that are not active for prefilled inputs
+        $('.input-field label').addClass('active');
+        $('.modal').openModal();
+      },
+
+      // Hide find metadata modal
       hide: function() {
         $('.modal').closeModal({
           complete: function() {
-            chrome.runtime.sendMessage({
-              operation: "metadata.exit"
-            });
+            sendExitMessage();
           }
         });
       }
+
     };
   })();
 

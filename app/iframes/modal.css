@@ -82,6 +82,20 @@ body {
   font-size: 10px;
 }
 
+/* Modal Message
+   ========================================================================== */
+
+.modal-content .message {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 418px;
+  display: table-cell;
+  vertical-align: middle;
+  color: rgba(0,0,0,0.2);
+  padding: 0 0.75em;
+}
+
 /* Metadata List
    ========================================================================== */
 
