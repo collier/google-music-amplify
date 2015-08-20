@@ -37,7 +37,7 @@
         "content_scripts/metadata/metadata.js",
         "content_scripts/metadata/modal_frame/modalFrame.js",
         "content_scripts/metadata/find_btn/findBtn.js",
-        "content_scripts/metadata/download_cover/downloadCover.js",
+        "content_scripts/metadata/edit_song/editSong.js",
         "content_scripts/init.js"
       ],
       "run_at": "document_end",

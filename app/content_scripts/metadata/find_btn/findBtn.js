@@ -3,12 +3,14 @@
 
   Metadata.FindBtn = (function() {
     return {
+
       init: function() {
         rivets.bind($('.search-btn'), {
           FindBtn: Metadata.FindBtn
         });
       },
 
+      // Get song name and artist from form and send it out in a message
       sendClickEvent: function() {
         var song = {};
         song.name = $('.simple-dialog-content input[data-field="1"]')
@@ -20,6 +22,7 @@
           payload: song
         });
       }
+
     };
   })();
 
