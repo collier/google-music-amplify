@@ -34,7 +34,7 @@
               <h2 class="message" rv-show="Modal.message | length | gt 0">{{Modal.message}}</h2>
               <ul class="collection" rv-hide="Modal.message | length | gt 0">
                 <h5 class="collection-header">Songs</h5>
-                <li class="collection-item avatar" rv-each-track="Modal.metaList">
+                <li class="collection-item avatar" rv-each-track="Modal.metaList" rv-on-click="Modal.setMetadata">
                   <img rv-src="track.album.imageUrl" alt="">
                   <div class="collection-text-holder">
                     <h3>{{track.name}}</h3>

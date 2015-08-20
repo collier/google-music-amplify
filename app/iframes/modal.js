@@ -10,6 +10,9 @@
       emptySet: 'no matching songs found :('
     };
 
+    // Create instance of spotify javascript api object
+    var spotify = new SpotifyWebApi();
+
     // Construct the Spotify track query string
     var buildQuery = function() {
       var query = 'track:"' + Modal.song.name + '"';
@@ -21,7 +24,6 @@
 
     // Load songs from search into metaList
     var loadMetadata = function() {
-      var spotify = new SpotifyWebApi();
       if(!Modal.song.name && !Modal.song.artist) {
         Modal.message = strings.noInput;
       } else {
@@ -59,6 +61,13 @@
     var sendExitMessage = function() {
       chrome.runtime.sendMessage({
         operation: "metadata.exit"
+      });
+    };
+
+    var sendUpdateMetadataMessage = function(data) {
+      chrome.runtime.sendMessage({
+        operation: "metadata.update",
+        payload: data
       });
     };
 
@@ -104,6 +113,17 @@
         Modal.metaList = [];
         Modal.message = '';
         loadMetadata();
+      },
+
+      // Create payload containing track and album info, and send message
+      setMetadata: function(e, model) {
+        var payload = {};
+        payload.track = Modal.metaList[model.index];
+        spotify.getAlbum(payload.track.album.id, function(err, data) {
+          payload.album = data;
+          sendUpdateMetadataMessage(payload);
+          Modal.hide();
+        });
       },
 
       // Show find metadata modal
