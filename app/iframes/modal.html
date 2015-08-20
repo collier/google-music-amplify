@@ -22,16 +22,17 @@
               <form class="col s12">
                 <div class="row">
                   <div class="input-field col s6">
-                    <input id="track" type="text" rv-value="Modal.song.name">
+                    <input id="track" type="text" rv-value="Modal.song.name" rv-on-change="Modal.reloadMetadata">
                     <label for="track">Track</label>
                   </div>
                   <div class="input-field col s6">
-                    <input id="artist" type="text" rv-value="Modal.song.artist">
+                    <input id="artist" type="text" rv-value="Modal.song.artist" rv-on-change="Modal.reloadMetadata">
                     <label for="artist">Artist</label>
                   </div>
                 </div>
               </form>
-              <ul class="collection">
+              <h2 class="message" rv-show="Modal.message | length | gt 0">{{Modal.message}}</h2>
+              <ul class="collection" rv-hide="Modal.message | length | gt 0">
                 <h5 class="collection-header">Songs</h5>
                 <li class="collection-item avatar" rv-each-track="Modal.metaList">
                   <img rv-src="track.album.imageUrl" alt="">
@@ -45,7 +46,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <a class="modal-action modal-close waves-effect waves-green btn-flat" rv-on-click="Modal.hide">done</a>
+            <a class="modal-action waves-effect waves-green btn-flat" rv-on-click="Modal.hide">done</a>
           </div>
         </div>
       </div>
