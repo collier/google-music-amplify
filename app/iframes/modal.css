@@ -63,7 +63,7 @@ body {
 }
 
 .modal.modal-fixed-footer .modal-content {
-  height: auto;
+  height: calc(100% - 64px);
 }
 
 /* Modal Form
@@ -115,14 +115,19 @@ body {
   padding: 0;
   border: none;
   padding: 0 20px;
-}
-
-.collection .collection-item {
   background-color: #fff;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  min-height: 48px;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  transition: all .3s ease-out;in-height: 48px;
+}
+
+.collection .collection-item.avatar:hover {
+  background-color: #e1f5fe;
 }
 
 .collection .collection-item img {
@@ -163,4 +168,11 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+/* Modal Footer
+   ========================================================================== */
+
+.modal-footer {
+  z-index: 1;
 }
