@@ -60,13 +60,13 @@
 
     var sendExitMessage = function() {
       chrome.runtime.sendMessage({
-        operation: "metadata.exit"
+        operation: 'metadata.exit'
       });
     };
 
     var sendUpdateMetadataMessage = function(data) {
       chrome.runtime.sendMessage({
-        operation: "metadata.update",
+        operation: 'metadata.update',
         payload: data
       });
     };
@@ -95,7 +95,7 @@
         });
         chrome.runtime.onMessage.addListener(
           function(request, sender, sendResponse) {
-            if (request.operation === "metdata.find") {
+            if (request.operation === 'metdata.find') {
               reset();
               Modal.song = request.payload;
               loadMetadata();
@@ -150,5 +150,6 @@
 })(this);
 
 $(function() {
+  'use strict';
   Modal.init();
 });

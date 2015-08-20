@@ -48,7 +48,7 @@
         });
         chrome.runtime.onMessage.addListener(
           function(request, sender, sendResponse) {
-            if (request.operation === "metadata.update") {
+            if (request.operation === 'metadata.update') {
               updateForm(request.payload);
             }
           }

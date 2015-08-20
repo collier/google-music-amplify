@@ -13,10 +13,10 @@
         });
         chrome.runtime.onMessage.addListener(
           function(request, sender, sendResponse) {
-            if (request.operation === "metdata.find") {
+            if (request.operation === 'metdata.find') {
               Metadata.ModalFrame.show();
             }
-            if (request.operation === "metadata.exit") {
+            if (request.operation === 'metadata.exit') {
               Metadata.ModalFrame.hide();
             }
           }

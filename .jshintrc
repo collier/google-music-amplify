@@ -20,7 +20,13 @@
   "smarttabs": true,
   "globals" : {
     "chrome": true,
-    "angular": true,
+    "rivets": true,
+    "$": true,
+    "GoogleMusicAmplify": true,
+    "Util": true,
+    "Modal": true,
+    "Metadata": true,
+    "SpotifyWebApi": true,
     "crypto": true
   }
 }

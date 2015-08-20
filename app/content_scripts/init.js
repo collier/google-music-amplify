@@ -27,5 +27,6 @@
 
 // Kicks off extension on document ready
 $(function() {
+  'use strict';
   GoogleMusicAmplify.init();
 });

@@ -33,7 +33,11 @@ module.exports = function (grunt) {
         tasks: ['bowerInstall']
       },
       js: {
-        files: ['<%= config.app %>/scripts/{,*/}*.js'],
+        files: [
+          '<%= config.app %>/content_scripts/{,*/}*.js',
+          '<%= config.app %>/iframes/{,*/}*.js',
+          '<%= config.app %>/*.js'
+        ],
         tasks: ['jshint'],
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -43,7 +47,10 @@ module.exports = function (grunt) {
         files: ['Gruntfile.js']
       },
       styles: {
-        files: ['<%= config.app %>/styles/{,*/}*.css'],
+        files: [
+          '<%= config.app %>/content_scripts/{,*/}*.css',
+          '<%= config.app %>/iframes/{,*/}*.css'
+        ],
         tasks: [],
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -54,7 +61,6 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= config.app %>/*.html',
           '<%= config.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= config.app %>/manifest.json',
           '<%= config.app %>/_locales/{,*/}*.json'
@@ -112,9 +118,8 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= config.app %>/scripts/{,*/}*.js',
-        '<%= config.app %>/modules/{,*/}*.js',
-        '!<%= config.app %>/scripts/vendor/*',
+        '<%= config.app %>/content_scripts/{,*/}*.js',
+        '<%= config.app %>/iframes/{,*/}*.js',
         'test/spec/{,*/}*.js'
       ]
     },
@@ -128,13 +133,13 @@ module.exports = function (grunt) {
     },
 
     // Automatically inject Bower components into the HTML file
-    bowerInstall: {
-      app: {
-        src: [
-          '<%= config.app %>/*.html'
-        ]
-      }
-    },
+    // bowerInstall: {
+    //   app: {
+    //     src: [
+    //       '<%= config.app %>/*.html'
+    //     ]
+    //   }
+    // },
 
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
@@ -156,8 +161,8 @@ module.exports = function (grunt) {
       },
       html: ['<%= config.dist %>/{,*/}*.html'],
       css: [
-        '<%= config.dist %>/styles/{,*/}*.css',
-        '<%= config.dist %>/modules/{,*/}*.css'
+        '<%= config.dist %>/content_scripts/{,*/}*.css',
+        '<%= config.dist %>/iframes/{,*/}*.css'
       ]
     },
 
@@ -242,10 +247,8 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'images/{,*/}*.{webp,gif}',
             '{,*/}*.html',
-            'styles/{,*/}*.css',
-            'css/{,*/}*.css',
-            'modules/{,*/}*.{html,css,js,json}',
-            'styles/fonts/{,*/}*.*',
+            'content_scripts/{,*/}*.{html,css,js,json}',
+            'iframes/{,*/}*.{html,css,js,json}',
             '_locales/{,*/}*.json',
           ]
         }]

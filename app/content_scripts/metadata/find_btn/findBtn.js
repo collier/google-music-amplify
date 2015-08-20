@@ -18,7 +18,7 @@
         song.artist = $('.simple-dialog-content input[data-field="3"]')
           .attr('data-original');
         chrome.runtime.sendMessage({
-          operation: "metdata.find",
+          operation: 'metdata.find',
           payload: song
         });
       }
