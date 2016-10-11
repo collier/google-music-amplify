@@ -1,4 +1,7 @@
-# Google Music Amplify
+# Google Music Amplify - UNMAINTAINED
+
+I can now longer support this chrome extension, and have unpublished it from the webstore due to recent updates by google music which break the extension. If you are interesed in maintaining this extension, please send me a message.
+
 A chrome extension that adds a way for users to use metadata from Spotify to populate their google music libraries. Google Play Music currently only offers a single suggested metadata set. This suggestion is often not available or suggests the wrong metadata. This extension lets users see a list of metadata options to choose from, then populates the fields accordingly. Currently does not support automatically uploading album art, but does provide a download link so that the user can manually upload artwork.
 
 ![Imgur](http://i.imgur.com/4Gml8Iu.png)
